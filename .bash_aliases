@@ -8,3 +8,10 @@ alias la='ls -AF'
 alias python='python3.8'
 alias pip='pip3.8'
 alias wg='wordgrinder'
+
+#git aliases
+alias gpo='git push orgin'
+alias gca='git commit -a'
+
+#ease of life
+alias up='cd ..'
