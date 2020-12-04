@@ -1,7 +1,7 @@
 # some more ls aliases
-alias ls='ls -F'
-alias ll='ls -lF'
-alias la='ls -AF'
+alias ls='ls -F --color'
+alias ll='ls -lF --color'
+alias la='ls -AF --color'
 #alias l='ls -CF'
 
 #program aliases

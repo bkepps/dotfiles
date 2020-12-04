@@ -56,7 +56,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-PROMPT_DIRTRIM=2
+PROMPT_DIRTRIM=3
 #colors
 BLACK='\[\033[0;30m\]'
 LIGHTBLACK='\[\033[1;30m\]'
