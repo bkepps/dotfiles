@@ -79,7 +79,7 @@ NOCOLOR='\[\033[1;0m\]'
 if [ "$color_prompt" = yes ]; then
     PS1="${debian_chroot:+($debian_chroot)}$LIGHTRED$(acpi | awk -F'[,:[:space:]]' '{print $6}') $LIGHTGREEN\u$DARKWHITE:$LIGHTCYAN\w $DARKWHITE($GREEN\$(git symbolic-ref --short HEAD 2>/dev/null)$DARKWHITE)$WHITE\$ "
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u:\w (/$(git symbolic-ref --short HEAD 2>/dev/nell))\$ '
+    PS1="${debian_chroot:+($debian_chroot)}$(acpi | awk -F'[,:[:space:]]' '{print $6}') \u:\W (/$(git symbolic-ref --short HEAD 2>/dev/null))\$ "
 fi
 unset color_prompt force_color_prompt
 

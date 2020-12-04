@@ -15,4 +15,5 @@ alias gca='git commit -a'
 
 #ease of life
 alias up='cd ..'
+alias h='cd ~'
 alias bashrc='. ~/.bashrc'
