@@ -1,7 +1,7 @@
 # some more ls aliases
-alias ls='ls -F --color'
-alias ll='ls -lF --color'
-alias la='ls -AF --color'
+alias ls='ls -F'
+alias ll='ls -lF'
+alias la='ls -AF'
 #alias l='ls -CF'
 
 #program aliases
@@ -12,6 +12,7 @@ alias wg='wordgrinder'
 #git aliases
 alias gpo='git push orgin'
 alias gca='git commit -a'
+alias gco="git checkout"
 
 #ease of life
 alias up='cd ..'
