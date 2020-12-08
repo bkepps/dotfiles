@@ -76,10 +76,15 @@ DARKWHITE='\[\033[0;37m\]'
 WHITE='\[\033[1;37m\]'
 NOCOLOR='\[\033[1;0m\]'
 
+#get current battery percent from acpi
+getPercent() {
+	acpi | awk '{sub(",", "", $4); print $4}';
+}
+
 if [ "$color_prompt" = yes ]; then
-    PS1="$LIGHTRED$(acpi | awk -F'[,:[:space:]]' '{print $6}') $LIGHTGREEN\u$DARKWHITE:$LIGHTCYAN\w $DARKWHITE($GREEN\$(git symbolic-ref --short HEAD 2>/dev/null)$DARKWHITE)$WHITE\$ "
+    PS1="$LIGHTRED\$(getPercent) $LIGHTGREEN\u$DARKWHITE:$LIGHTCYAN\w $DARKWHITE($GREEN\$(git symbolic-ref --short HEAD 2>/dev/null)$DARKWHITE)$WHITE\$ "
 else
-    PS1="${debian_chroot:+($debian_chroot)}$(acpi | awk -F'[,:[:space:]]' '{print $6}') \u:\W (/$(git symbolic-ref --short HEAD 2>/dev/null))\$ "
+    PS1="\$(getPercent) \u:\W (/$(git symbolic-ref --short HEAD 2>/dev/null))\$ "
 fi
 unset color_prompt force_color_prompt
 
