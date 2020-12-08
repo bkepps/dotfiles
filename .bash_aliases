@@ -12,6 +12,7 @@ alias wg='wordgrinder'
 #git aliases
 alias gpo='git push orgin'
 alias gca='git commit -a'
+alias gco='git checkout'
 
 #ease of life
 alias up='cd ..'
