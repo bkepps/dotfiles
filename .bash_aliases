@@ -16,4 +16,5 @@ alias gco='git checkout'
 
 #ease of life
 alias up='cd ..'
+alias h='cd ~'
 alias bashrc='. ~/.bashrc'
