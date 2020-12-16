@@ -10,8 +10,9 @@ alias pip='pip3.8'
 alias wg='wordgrinder'
 
 #git aliases
-alias gpo='git push orgin'
+alias gpo='git push origin'
 alias gca='git commit -a'
+alias gco="git checkout"
 
 #ease of life
 alias up='cd ..'
