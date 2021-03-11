@@ -82,7 +82,7 @@ getPercent() {
 }
 
 if [ "$color_prompt" = yes ]; then
-    PS1="$LIGHTRED\$(getPercent) $DARKWHITE| $LIGHTMAGENTA\t $DARKWHITE| $LIGHTBLUE\$(git symbolic-ref --short HEAD 2>/dev/null) $DARKWHITE| $GREEN\h $DARKWHITE| $LIGHTGREEN\u $DARKWHITE:$LIGHTCYAN\w\n$WHITE\$ "
+    PS1="$LIGHTRED\$(getPercent) $DARKWHITE| $LIGHTMAGENTA\t $DARKWHITE| $CYAN\$(git symbolic-ref --short HEAD 2>/dev/null) $DARKWHITE| $GREEN\h $DARKWHITE| $LIGHTGREEN\u $DARKWHITE:$LIGHTCYAN\w\n$WHITE\$ $NOCOLOR"
 else
     PS1="\$(getPercent) \u:\W (/$(git symbolic-ref --short HEAD 2>/dev/null))\$ "
 fi
