@@ -2,4 +2,11 @@ colo ron
 syntax on
 set showmatch
 
-highlight Comment	ctermfg=8	guifg=#808080
+"Changes comments to a grayish color. I dislike the bright blue of comments in ron.
+"This fixes that. 
+highlight Comment	ctermfg=8	guifg=darkgrey
+
+set smartindent
+
+"Disable beep
+set belloff=all

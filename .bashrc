@@ -76,10 +76,16 @@ DARKWHITE='\[\033[0;37m\]'
 WHITE='\[\033[1;37m\]'
 NOCOLOR='\[\033[1;0m\]'
 
+#get last exit code
+getExitCode() {
+	exitCode=$?;
+	printf %3d $exitCode;
+}
+
 if [ "$color_prompt" = yes ]; then
-    PS1="${debian_chroot:+($debian_chroot)}$LIGHTGREEN\u$DARKWHITE:$LIGHTCYAN\w $DARKWHITE($GREEN\$(git symbolic-ref --short HEAD 2>/dev/null)$DARKWHITE)$WHITE\$ "
+    PS1="$DARKWHITE\$(getExitCode) | $LIGHTMAGENTA\t $DARKWHITE| $CYAN\$(git symbolic-ref --short HEAD 2>/dev/null) $DARKWHITE| $GREEN\h $DARKWHITE| $LIGHTGREEN\u $DARKWHITE:$LIGHTCYAN\w\n$WHITE\$ $NOCOLOR"
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u:\w (/$(git symbolic-ref --short HEAD 2>/dev/nell))\$ '
+    PS1="\$(getPercent) \u:\W (/$(git symbolic-ref --short HEAD 2>/dev/null))\$ "
 fi
 unset color_prompt force_color_prompt
 
