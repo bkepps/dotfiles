@@ -76,13 +76,19 @@ DARKWHITE='\[\033[0;37m\]'
 WHITE='\[\033[1;37m\]'
 NOCOLOR='\[\033[1;0m\]'
 
+#get last exit code
+getExitCode() {
+	exitCode=$?;
+	printf %3d $exitCode;
+}
+
 #get current battery percent from acpi
 getPercent() {
 	acpi | awk '{sub(",", "", $4); print $4}';
 }
 
 if [ "$color_prompt" = yes ]; then
-    PS1="$LIGHTRED\$(getPercent) $DARKWHITE| $LIGHTMAGENTA\t $DARKWHITE| $CYAN\$(git symbolic-ref --short HEAD 2>/dev/null) $DARKWHITE| $GREEN\h $DARKWHITE| $LIGHTGREEN\u $DARKWHITE:$LIGHTCYAN\w\n$WHITE\$ $NOCOLOR"
+    PS1="$DARKWHITE\$(getExitCode) | $LIGHTRED\$(getPercent) $DARKWHITE| $LIGHTMAGENTA\t $DARKWHITE| $CYAN\$(git symbolic-ref --short HEAD 2>/dev/null) $DARKWHITE| $GREEN\h $DARKWHITE| $LIGHTGREEN\u $DARKWHITE:$LIGHTCYAN\w\n$WHITE\$ $NOCOLOR"
 else
     PS1="\$(getPercent) \u:\W (/$(git symbolic-ref --short HEAD 2>/dev/null))\$ "
 fi

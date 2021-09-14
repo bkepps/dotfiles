@@ -6,5 +6,7 @@ set showmatch
 "This fixes that. 
 highlight Comment	ctermfg=8	guifg=darkgrey
 
+set smartindent
+
 "Disable beep
 set belloff=all
